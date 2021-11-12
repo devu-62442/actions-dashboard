@@ -21,7 +21,7 @@ jobs:
         sudo chmod +x /usr/local/bin/yq
     - name: Generate
       run: |
-        ./generate.sh -o samples/gcp.md -i https://github.com/devu-62442/actions-dashboard/blob/master/samples/some-other-gcp-repos
+        ./generate.sh -o samples/gcp.md -i https://github.com/devu-62442/GRAMAC-A-Graph-Based-Malware-Classification-Mechanism
         
         if [ -z "$(git status -s -- samples/gcp.md)" ]; then
           echo No changes to commit 
