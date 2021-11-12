@@ -24,8 +24,8 @@ jobs:
           echo No changes to commit this pathksdhfklshdlfk
           exit 0
         fi
-        git config user.email "check-action@github"
-        git config user.name "check-action"
+        git config user.email "devyani.vij2495@gmail.com"
+        git config user.name "devu-62442"
         git add samples/gcp.md
         git commit -m "Update dashboard markdown"
         git push origin master
