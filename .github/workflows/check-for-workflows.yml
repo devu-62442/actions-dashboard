@@ -1,13 +1,17 @@
-name: Check for workflows
-on:
-  schedule:
-  - cron: '0 13 * * *'
+name: gitleaks
+
+on: [push,pull_request]
 
 jobs:
-  check:
+  gitleaks:
     runs-on: ubuntu-latest
     steps:
-
+    - uses: actions/checkout@v1
+    - name: gitleaks-action
+      uses: zricethezav/gitleaks-action@master
+      with:
+        config-path: security/.gitleaks.toml
+    
     - name: Check out
       uses: actions/checkout@v2
 
@@ -15,7 +19,6 @@ jobs:
       run: |
         sudo wget -LO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/download/3.3.0/yq_linux_amd64
         sudo chmod +x /usr/local/bin/yq
-
     - name: Generate
       run: |
         ./generate.sh -o samples/gcp.md -i https://github.com/devu-62442/SecDetecting
