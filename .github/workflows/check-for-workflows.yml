@@ -21,7 +21,7 @@ jobs:
         ./generate.sh -o samples/gcp.md -i samples/gcp-repos \
           -i https://raw.githubusercontent.com/arjun024/actions-dashboard/master/samples/some-other-gcp-repos
         if [ -z "$(git status -s -- samples/gcp.md)" ]; then
-          echo No changes to commit
+          echo No changes to commit this
           exit 0
         fi
         git config user.email "check-action@github"
