@@ -21,10 +21,10 @@ jobs:
         sudo chmod +x /usr/local/bin/yq
     - name: Generate
       run: |
-        ./generate.sh -o samples/gcp.md -i devu-62442/SecDetecting
+        ./generate.sh -o samples/gcp.md -i https://github.com/devu-62442/SecDetecting.git
         
         if [ -z "$(git status -s -- samples/gcp.md)" ]; then
-          echo No changes to commit this pathksdhfklshdlfk
+          echo No changes to commit 
           exit 0
         fi
         git config user.email "devyani.vij2495@gmail.com"
