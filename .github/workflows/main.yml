@@ -1,17 +1,13 @@
-name: gitleaks
-
-on: [push,pull_request]
+name: Check for workflows
+on:
+  schedule:
+  - cron: '0 13 * * *'
 
 jobs:
-  gitleaks:
+  check:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
-    - name: gitleaks-action
-      uses: zricethezav/gitleaks-action@master
-      with:
-        config-path: security/.gitleaks.toml
-    
+
     - name: Check out
       uses: actions/checkout@v2
 
@@ -21,14 +17,14 @@ jobs:
         sudo chmod +x /usr/local/bin/yq
     - name: Generate
       run: |
-        ./generate.sh -o samples/gcp.md -i https://github.com/devu-62442/actions-dashboard/edit/master/samples/some-other-gcp-repos
-        
+        ./generate.sh -o samples/gcp.md -i samples/gcp-repos \
+          -i https://raw.githubusercontent.com/arjun024/actions-dashboard/master/samples/some-other-gcp-repos
         if [ -z "$(git status -s -- samples/gcp.md)" ]; then
-          echo No changes to commit 
+          echo No changes to commit
           exit 0
         fi
-        git config user.email "devyani.vij2495@gmail.com"
-        git config user.name "devu-62442"
+        git config user.email "check-action@github"
+        git config user.name "check-action"
         git add samples/gcp.md
         git commit -m "Update dashboard markdown"
         git push origin master
