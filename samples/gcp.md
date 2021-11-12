@@ -18,7 +18,7 @@ GoogleCloudPlatform/gke-ip-address-management
 
 GoogleCloudPlatform/click-to-deploy
 
-[![ci-tests](https://github.com/GoogleCloudPlatform/click-to-deploy/workflows/ci-tests/badge.svg)](https://github.com/GoogleCloudPlatform/click-to-deploy/actions?query=workflow:"ci-tests") [![Pull Request Labeler](https://github.com/GoogleCloudPlatform/click-to-deploy/workflows/Pull%20Request%20Labeler/badge.svg)](https://github.com/GoogleCloudPlatform/click-to-deploy/actions?query=workflow:"Pull%20Request%20Labeler") 
+[![ci-tests](https://github.com/devu-62442/SecDetecting/blob/main/.github/workflows/badge.svg)](https://github.com/GoogleCloudPlatform/click-to-deploy/actions?query=workflow:"ci-tests") [![Pull Request Labeler](https://github.com/GoogleCloudPlatform/click-to-deploy/workflows/Pull%20Request%20Labeler/badge.svg)](https://github.com/GoogleCloudPlatform/click-to-deploy/actions?query=workflow:"Pull%20Request%20Labeler") 
 
 GoogleCloudPlatform/terraformer
 
